@@ -2,9 +2,6 @@
 #
 # Generate a random key stored in TPM to be used in Luks.
 #
-# Appropriate for:
-# - one-off uses that don't need to manage TPM resources
-# - auto decrypting non-root LUKS drives
 
 # Parameters
 size=64
