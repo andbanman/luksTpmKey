@@ -2,6 +2,4 @@ Based off the blog https://run.tournament.org.il/ubuntu-18-04-and-tpm2-encrypted
 
 Written for Ubuntu 18.04, but should be general since it uses standard tools from tpm2-tools package. Newer versions could/should use clevis-tpm2.
 
-Appropriate for:
-- Decrypting non-root LUKS drives during boot
-- One-off uses that don't need to manage any other TPM resources
+Appropriate for one-off uses that don't need to manage any other TPM resources.

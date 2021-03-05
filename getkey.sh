@@ -9,7 +9,5 @@ index=0x1500016
 auth=0x40000001
 
 # Read, format, and print the key
-key=$(tpm2_nvread -x $index -a $auth -s $size -o 0 -T device | tail -n 1)
-key=$(echo "$key" | tr -d ' ')
-key=$(echo "$key" | /usr/bin/perl -ne 's/([0-9a-f]{2})/print chr hex $1/gie')
-printf "%s\n" "$key"
+tpm2_nvread -x $index -a $auth -s $size -o 0 -T device | tail -n 1 |
+	tr -d ' ' | /usr/bin/perl -ne 's/([0-9a-f]{2})/print chr hex $1/gie'
