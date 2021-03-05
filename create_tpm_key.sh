@@ -16,7 +16,6 @@ tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w $((size - 1)) | head -n 1 > $key
 #tpm2_nvrelease -x $index -a $auth #XXX don't release automatically
 tpm2_nvdefine  -x $index -a $auth -T device -s $size -t 0x2000A
 tpm2_nvwrite   -x $index -a $auth -T device -f $key
-rm $key
 
 echo Next steps ...
 echo "1. Add key to LUKS        # cryptsetup luksAddKey $dev $key"
@@ -25,3 +24,4 @@ echo "3. Verify TPM-LUKS setup  # cryptdisks_start $name"
 echo "4. Install initrd hook    # install -m0755 -oroot -groot decrypt_tpm_key /etc/initramfs-tools/hooks/decrypt_tpm_key"
 echo "5. Remake initrd          # mkinitramfs -o ..."
 echo "6. Reboot and verify      # reboot"
+echo "7. Delete key file        # rm $key"
