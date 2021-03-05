@@ -20,8 +20,8 @@ rm $key
 
 echo Next steps ...
 echo "1. Add key to LUKS        # cryptsetup luksAddKey $dev $key"
-echo "2. Update /etc/crypttab   # $name $dev none luks,discard,initramfs,keyscript=/path/to/getkey.sh"
+echo "2. Update /etc/crypttab   # $name $dev none luks,discard,initramfs,keyscript=/path/to/get_tpm_key.sh"
 echo "3. Verify TPM-LUKS setup  # cryptdisks_start $name"
-echo "4. Install initrd hook    # install -m0755 -oroot -groot decryptkey /etc/initramfs-tools/hooks/decryptkey"
+echo "4. Install initrd hook    # install -m0755 -oroot -groot decrypt_tpm_key /etc/initramfs-tools/hooks/decrypt_tpm_key"
 echo "5. Remake initrd          # mkinitramfs -o ..."
 echo "6. Reboot and verify      # reboot"

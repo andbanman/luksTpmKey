@@ -3,7 +3,7 @@
 # Print the key stored in a TPM device.
 #
 
-# Parameters must match what was used in create_tpm_key
+# Parameters must match what was used in create_tpm_key.sh
 size=64
 index=0x1500016
 auth=0x40000001
